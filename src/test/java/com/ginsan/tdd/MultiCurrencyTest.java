@@ -23,9 +23,10 @@ public class MultiCurrencyTest {
     // 货币？
     // 删除法郎等乘法测试？消除times重复
     // Bank.reduce(Money)
-    // todo reduce(Bank,String)
-    // todo 带换算等 reduce money
+    //  reduce(Bank,String)
+    //  带换算等 reduce money
     // todo 利率是小数
+    // todo 消除测试重复代码
 
     @Test
     public void should_support_multiplication() {
@@ -109,10 +110,23 @@ public class MultiCurrencyTest {
     public void should_reduce_money_with_different_currency() {
         // given
         Bank bank = new Bank();
-        bank.addRate(new Pair("CHF","USD"),2);
+        bank.addRate("CHF", "USD", 2);
         // when
         Money result = bank.reduce(Money.franc(2), "USD");
         // then
         assertThat(Money.dollar(1)).isEqualTo(result);
+    }
+
+    @Test
+    public void should_do_mixed_addtion() {
+        // given
+        Money fiveBucks = Money.dollar(5);
+        Money tenFrancs = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        // when
+        Money result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
+        // then
+        assertThat(Money.dollar(10)).isEqualTo(result);
     }
 }
