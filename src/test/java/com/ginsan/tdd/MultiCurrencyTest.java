@@ -25,11 +25,11 @@ public class MultiCurrencyTest {
     @Test
     public void should_support_multiplication_for_dollar() {
         // given
-        Dollar five = new Dollar(5);
+        Money five = Money.dollar(5);
         // when
         // then
-        assertThat(five.times(2)).isEqualTo(new Dollar(10));
-        assertThat(five.times(3)).isEqualTo(new Dollar(15));
+        assertThat(five.times(2)).isEqualTo(Money.dollar(10));
+        assertThat(five.times(3)).isEqualTo(Money.dollar(15));
     }
 
     @Test
@@ -47,11 +47,11 @@ public class MultiCurrencyTest {
         // given
         // when
         // then
-        assertThat(new Dollar(5)).isEqualTo(new Dollar(5));
-        assertThat(new Dollar(5)).isNotEqualTo(new Dollar(6));
+        assertThat(Money.dollar(5)).isEqualTo(Money.dollar(5));
+        assertThat(Money.dollar(5)).isNotEqualTo(Money.dollar(6));
         assertThat(new Franc(5)).isEqualTo(new Franc(5));
         assertThat(new Franc(5)).isNotEqualTo(new Franc(6));
-        assertThat(new Franc(5)).isNotEqualTo(new Dollar(5));
+        assertThat(new Franc(5)).isNotEqualTo(Money.dollar(5));
 
     }
 }

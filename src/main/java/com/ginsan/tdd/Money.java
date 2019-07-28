@@ -2,11 +2,17 @@ package com.ginsan.tdd;
 
 import java.util.Objects;
 
-public class Money {
+public abstract class Money {
     protected int amount;
+
+    public abstract Money times(int multiplier);
 
     public Money(int amount) {
         this.amount = amount;
+    }
+
+    public static Dollar dollar(int amount) {
+        return new Dollar(amount);
     }
 
     @Override
