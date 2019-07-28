@@ -20,7 +20,7 @@ public class MultiCurrencyTest {
     //  普遍判等
     // todo 普通相乘
     // 比较美元和法郎对象
-    // todo 货币？
+    // 货币？
     // todo 删除法郎等乘法测试？消除times重复
 
     @Test
