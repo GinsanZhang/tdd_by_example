@@ -25,6 +25,7 @@ public class MultiCurrencyTest {
     // Bank.reduce(Money)
     // todo reduce(Bank,String)
     // todo 带换算等 reduce money
+    // todo 利率是小数
 
     @Test
     public void should_support_multiplication() {
@@ -102,5 +103,16 @@ public class MultiCurrencyTest {
         Money money = bank.reduce(Money.dollar(1), "USD");
         // then
         assertThat(Money.dollar(1)).isEqualTo(money);
+    }
+
+    @Test
+    public void should_reduce_money_with_different_currency() {
+        // given
+        Bank bank = new Bank();
+        bank.addRate(new Pair("CHF","USD"),2);
+        // when
+        Money result = bank.reduce(Money.franc(2), "USD");
+        // then
+        assertThat(Money.dollar(1)).isEqualTo(result);
     }
 }
