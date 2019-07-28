@@ -55,4 +55,13 @@ public class MultiCurrencyTest {
         assertThat(Money.franc(5)).isNotEqualTo(Money.dollar(5));
 
     }
+
+    @Test
+    public void should_test_currency() {
+        // given
+        // when
+        // then
+        assertThat("USD").isEqualTo(Money.dollar(1).currency());
+        assertThat("CHF").isEqualTo(Money.franc(1).currency());
+    }
 }
