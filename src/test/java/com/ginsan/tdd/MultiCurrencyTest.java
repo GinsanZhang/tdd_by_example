@@ -16,12 +16,15 @@ public class MultiCurrencyTest {
     // todo 和空对象判等
     // todo 和非同类对象判等
     // 5法郎*2=10法郎
-    // todo  消除美元和法郎之间等重复设计
+    //   消除美元和法郎之间等重复设计
     //  普遍判等
     // todo 普通相乘
     // 比较美元和法郎对象
     // 货币？
     // 删除法郎等乘法测试？消除times重复
+    // Bank.reduce(Money)
+    // todo reduce(Bank,String)
+    // todo 带换算等 reduce money
 
     @Test
     public void should_support_multiplication() {
@@ -84,10 +87,20 @@ public class MultiCurrencyTest {
     public void should_reduce_sum() {
         // given
         Expression sum = new Sum(Money.dollar(3), Money.dollar(4));
-        // when
         Bank bank = new Bank();
+        // when
         Money result = bank.reduce(sum, "USD");
         // then
         assertThat(Money.dollar(7)).isEqualTo(result);
+    }
+
+    @Test
+    public void should_reduce_money() {
+        // given
+        Bank bank = new Bank();
+        // when
+        Money money = bank.reduce(Money.dollar(1), "USD");
+        // then
+        assertThat(Money.dollar(1)).isEqualTo(money);
     }
 }
