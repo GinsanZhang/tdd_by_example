@@ -2,7 +2,7 @@ package com.ginsan.tdd;
 
 import java.util.Objects;
 
-public class Money {
+public class Money implements Expression {
     protected int amount;
     protected String currency;
 

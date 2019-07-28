@@ -59,9 +59,12 @@ public class MultiCurrencyTest {
     @Test
     public void should_be_do_correct_wiht_addition() {
         // given
+        Money five = Money.dollar(5);
         // when
-        Money sum = Money.dollar(5).plus(Money.dollar(5));
+        Expression sum = five.plus(Money.dollar(5));
+        Bank bank = new Bank();
+        Money reduced=bank.reduce(sum,"USD");
         // then
-        assertThat(Money.dollar(10)).isEqualTo(sum);
+        assertThat(Money.dollar(10)).isEqualTo(reduced);
     }
 }
