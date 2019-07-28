@@ -1,0 +1,15 @@
+plugins {
+    id 'java-library'
+    id 'idea'
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+dependencies {
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.assertj:assertj-core:3.12.2'
+}
