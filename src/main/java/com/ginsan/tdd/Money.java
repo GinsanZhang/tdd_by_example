@@ -2,7 +2,7 @@ package com.ginsan.tdd;
 
 import java.util.Objects;
 
-public  class Money {
+public class Money {
     protected int amount;
     protected String currency;
 
@@ -12,16 +12,18 @@ public  class Money {
     }
 
     public static Money dollar(int amount) {
-        return new Money(amount,"USD");
+        return new Money(amount, "USD");
     }
 
     public static Money franc(int amount) {
-        return new Money(amount,"CHF");
+        return new Money(amount, "CHF");
     }
 
-    public  Money times(int multiplier){
-        return  new Money(amount*multiplier,currency);
-    };
+    public Money times(int multiplier) {
+        return new Money(amount * multiplier, currency);
+    }
+
+    ;
 
     public String currency() {
         return this.currency;
@@ -37,5 +39,9 @@ public  class Money {
     @Override
     public int hashCode() {
         return Objects.hash(amount);
+    }
+
+    public Money plus(Money addend) {
+        return new Money(amount + addend.amount, currency);
     }
 }
