@@ -27,6 +27,7 @@ public class MultiCurrencyTest {
     //  带换算等 reduce money
     // todo 利率是小数
     // todo 消除测试重复代码
+    // todo sum.plus
 
     @Test
     public void should_support_multiplication() {
@@ -120,8 +121,8 @@ public class MultiCurrencyTest {
     @Test
     public void should_do_mixed_addtion() {
         // given
-        Money fiveBucks = Money.dollar(5);
-        Money tenFrancs = Money.franc(10);
+        Expression fiveBucks = Money.dollar(5);
+        Expression tenFrancs = Money.franc(10);
         Bank bank = new Bank();
         bank.addRate("CHF", "USD", 2);
         // when
