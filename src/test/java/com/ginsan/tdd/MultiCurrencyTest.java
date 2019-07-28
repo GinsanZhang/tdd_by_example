@@ -19,6 +19,7 @@ public class MultiCurrencyTest {
     // todo  消除美元和法郎之间等重复设计
     //  普遍判等
     // todo 普通相乘
+    // 比较美元和法郎对象
 
     @Test
     public void should_support_multiplication_for_dollar() {
@@ -49,6 +50,7 @@ public class MultiCurrencyTest {
         assertThat(new Dollar(5)).isNotEqualTo(new Dollar(6));
         assertThat(new Franc(5)).isEqualTo(new Franc(5));
         assertThat(new Franc(5)).isNotEqualTo(new Franc(6));
+        assertThat(new Franc(5)).isNotEqualTo(new Dollar(5));
 
     }
 }
