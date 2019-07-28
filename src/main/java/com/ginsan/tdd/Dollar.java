@@ -1,7 +1,5 @@
 package com.ginsan.tdd;
 
-import java.util.Objects;
-
 public class Dollar extends Money {
 
     public Dollar(int amount) {
@@ -12,14 +10,4 @@ public class Dollar extends Money {
         return new Dollar(amount * multiplier);
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        Money money = (Money) obj;
-        return amount == money.amount;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(amount);
-    }
 }
