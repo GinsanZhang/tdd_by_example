@@ -57,14 +57,37 @@ public class MultiCurrencyTest {
     }
 
     @Test
-    public void should_be_do_correct_wiht_addition() {
+    public void should_be_do_correct_with_addition() {
         // given
         Money five = Money.dollar(5);
         // when
-        Expression sum = five.plus(Money.dollar(5));
+        Expression sum = five.plus(five);
         Bank bank = new Bank();
-        Money reduced=bank.reduce(sum,"USD");
+        Money reduced = bank.reduce(sum, "USD");
         // then
         assertThat(Money.dollar(10)).isEqualTo(reduced);
+    }
+
+    @Test
+    public void should_return_sum_when_plus() {
+        // given
+        Money five = Money.dollar(5);
+        // when
+        Expression result = five.plus(five);
+        Sum sum = (Sum) result;
+        // then
+        assertThat(five).isEqualTo(sum.augend);
+        assertThat(five).isEqualTo(sum.addend);
+    }
+
+    @Test
+    public void should_reduce_sum() {
+        // given
+        Expression sum = new Sum(Money.dollar(3), Money.dollar(4));
+        // when
+        Bank bank = new Bank();
+        Money result = bank.reduce(sum, "USD");
+        // then
+        assertThat(Money.dollar(7)).isEqualTo(result);
     }
 }
