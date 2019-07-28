@@ -1,5 +1,10 @@
-.gradle
 *.iml
 *.ipr
 *.iws
+
+### Gradle ###
+.gradle
 build/
+
+### Gradle Patch ###
+**/build/
