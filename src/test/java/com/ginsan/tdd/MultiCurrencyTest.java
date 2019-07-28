@@ -8,7 +8,7 @@ public class MultiCurrencyTest {
 
     // 当瑞士法郎和美元当汇率为2：1时，5美元+10法郎=10美元
     //  5美元*2=10美元 --done
-    // todo amount 定义为私有
+    //  amount 定义为私有
     // Dollar 类有副作用？
     // todo 钱必须是 int？
     // 实现equals()
