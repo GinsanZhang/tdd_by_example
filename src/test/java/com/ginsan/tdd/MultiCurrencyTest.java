@@ -15,6 +15,7 @@ public class MultiCurrencyTest {
     // 实现 hashCode()
     // todo 和空对象判等
     // todo 和非同类对象判等
+    // todo 5法郎*2=10法郎
 
     @Test
     public void should_support_multiplication() {
