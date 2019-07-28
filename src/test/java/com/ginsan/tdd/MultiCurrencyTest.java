@@ -16,6 +16,7 @@ public class MultiCurrencyTest {
     // todo 和空对象判等
     // todo 和非同类对象判等
     // 5法郎*2=10法郎
+    // todo 消除美元和法郎之间等重复设计
 
     @Test
     public void should_support_multiplication_for_dollar() {
