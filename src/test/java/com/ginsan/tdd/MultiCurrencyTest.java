@@ -27,7 +27,7 @@ public class MultiCurrencyTest {
     //  带换算等 reduce money
     // todo 利率是小数
     // todo 消除测试重复代码
-    // sum.plus
+    // todo sum.plus and money.plus
 
     @Test
     public void should_support_multiplication() {
