@@ -15,15 +15,25 @@ public class MultiCurrencyTest {
     // 实现 hashCode()
     // todo 和空对象判等
     // todo 和非同类对象判等
-    // todo 5法郎*2=10法郎
+    // 5法郎*2=10法郎
 
     @Test
-    public void should_support_multiplication() {
+    public void should_support_multiplication_for_dollar() {
         // given
         Dollar five = new Dollar(5);
         // when
         // then
         assertThat(five.times(2)).isEqualTo(new Dollar(10));
         assertThat(five.times(3)).isEqualTo(new Dollar(15));
+    }
+
+    @Test
+    public void should_support_multiplication_for_franc() {
+        // given
+        Franc five = new Franc(5);
+        // when
+        // then
+        assertThat(five.times(2)).isEqualTo(new Franc(10));
+        assertThat(five.times(3)).isEqualTo(new Franc(15));
     }
 }
