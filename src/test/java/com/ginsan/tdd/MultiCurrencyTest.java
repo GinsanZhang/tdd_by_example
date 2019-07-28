@@ -20,6 +20,7 @@ public class MultiCurrencyTest {
     //  普遍判等
     // todo 普通相乘
     // 比较美元和法郎对象
+    // todo 货币？
 
     @Test
     public void should_support_multiplication_for_dollar() {
