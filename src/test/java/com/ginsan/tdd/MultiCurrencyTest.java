@@ -21,10 +21,10 @@ public class MultiCurrencyTest {
     // todo 普通相乘
     // 比较美元和法郎对象
     // 货币？
-    // todo 删除法郎等乘法测试？消除times重复
+    // 删除法郎等乘法测试？消除times重复
 
     @Test
-    public void should_support_multiplication_for_dollar() {
+    public void should_support_multiplication() {
         // given
         Money five = Money.dollar(5);
         // when
@@ -33,15 +33,6 @@ public class MultiCurrencyTest {
         assertThat(five.times(3)).isEqualTo(Money.dollar(15));
     }
 
-    @Test
-    public void should_support_multiplication_for_franc() {
-        // given
-        Money five = Money.franc(5);
-        // when
-        // then
-        assertThat(five.times(2)).isEqualTo(Money.franc(10));
-        assertThat(five.times(3)).isEqualTo(Money.franc(15));
-    }
 
     @Test
     public void should_be_equal() {
