@@ -2,11 +2,10 @@ package com.ginsan.tdd;
 
 import java.util.Objects;
 
-public class Dollar {
-    private int amount;
+public class Dollar extends Money {
 
     public Dollar(int amount) {
-        this.amount = amount;
+        super(amount);
     }
 
     public Dollar times(int multiplier) {
@@ -15,8 +14,8 @@ public class Dollar {
 
     @Override
     public boolean equals(Object obj) {
-        Dollar dollar = (Dollar) obj;
-        return amount == dollar.amount;
+        Money money = (Money) obj;
+        return amount == money.amount;
     }
 
     @Override
